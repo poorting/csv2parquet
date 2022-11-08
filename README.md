@@ -18,5 +18,5 @@ Useful if you get a parquet file from somewhere and want to quickly check its co
 If you have DuckDB at hand another quick solution (for showing schema information) is to execute these commands in DuckDB.
 
 `create table test as select(*) from 'filename.parquet' limit 1;`<br/>
-`describe table test`
+`describe table test;`
 
