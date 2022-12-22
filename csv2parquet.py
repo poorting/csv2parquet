@@ -65,6 +65,7 @@ def main():
 
     con = duckdb.connect(":memory:")
     con.execute(f"""
+        PRAGMA enable_progress_bar;
         COPY (SELECT * FROM read_csv_auto('{args.infile}', delim=',', header=True, SAMPLE_SIZE=-1) )
         TO '{args.outfile}'
         (FORMAT 'PARQUET', CODEC 'ZSTD');
